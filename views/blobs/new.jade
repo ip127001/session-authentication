@@ -1,0 +1,19 @@
+
+extends ../layout
+
+block content
+	h1.
+		#{title}
+	form#formAddBlob(name="addblob",method="post",action="/events")
+		p Title: 
+			input#inputTitle(type="text", placeholder="event title", name="title")
+		p Organiser:
+			input#inputOrganiser(type='text', placeholder="name of organiser" , name='organiser')
+		p Date:
+			input#inputDate(type='date', placeholder="18/12/2018", name='date')
+		p Description
+			input#inputDescription(type='text', placeholder="description", name='description')
+		p TicketPrice
+			input#inputTicketPrice(type="number", placeholder="10$", name="ticketprice")
+		p
+			button#btnSubmit(type="submit") submit

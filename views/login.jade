@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1
+		#{title}
+	-if(messages)
+		div#note	#{messages}
+	form#formUserLogin(name="userlogin",method="post",action="/login")
+		p	Email: 
+			input#inputEmail(type="text", placeholder="ex. example@gmail.com", name="email")
+		p	Password:
+			input#inputPassword(type="password", placeholder="your password", name="password")
+		p
+			button#btnSubmit(type="submit")	login

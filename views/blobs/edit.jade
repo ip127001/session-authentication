@@ -1,0 +1,21 @@
+extends ../layout
+
+block content
+	h1.
+		Blob ID #{blob._id}
+	form(action='/events/#{blob._id}/edit',method='post',name='updateblob',enctype='application/x-www-form-urlencoded')
+		p Title:
+			input#inputTitle(type='text', value='#{blob.title}', name='title')
+		p Organiser:
+			input#inputOrganiser(type='text', value='#{blob.organiser}', name='organiser')
+		p Date:
+			input#inputDob(type='date', value='#{blob.date}', name='date')
+		p Description
+			input#inputDescription(type='text', value='#{blob.description}', name='description')
+		p TicketPrice
+			input#inputTicketPrice(type="number", value='#{blob.ticketprice}', name="ticketprice")
+		p
+			input(type='hidden',value='PUT',name='_method')
+		p
+			button#btnSubmit(type='submit').
+				Update

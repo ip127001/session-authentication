@@ -1,0 +1,14 @@
+extends layout
+
+block content
+	h1
+		#{title}
+	-if(messages)
+		div#note	#{messages}
+	form(method="post",action="/signup")
+		p	Email: 
+			input#inputEmail(type="text",name="email")
+		p	Password:
+			input#inputPassword(type="password",name="password")
+		p
+			button#btnSubmit(type="submit")	submit

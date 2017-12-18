@@ -1,0 +1,13 @@
+extends layout
+
+block content
+    h1= title
+        p   Welcome to your profile page
+    br
+    a(href="/events")
+        button(type="button") All events list
+    div
+        p   email:  #{user._id}
+        p   email:  #{user.local.email}
+        p   email:  #{user.local.password}
+    

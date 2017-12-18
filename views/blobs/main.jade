@@ -1,0 +1,33 @@
+extends ../layout
+
+block content
+    h1.
+         #{title}
+    ul
+        - each blob, i in blobs
+            li
+                label title of event =
+                = blob.title
+                br
+                label organiser of event =
+                = blob.organiser
+                br
+                label date of event =
+                = blob.date
+                br
+                label description of event =
+                = blob.description
+                br
+                label ticket price of event =
+                = blob.ticketprice
+                br
+                = blob._id
+                br
+                form(action='/events/#{blob._id}/edit',method='post',enctype='application/x-www-form-urlencoded')
+                    input(type='hidden',value='DELETE',name='_method')
+                    button(type='submit').
+                        Delete
+                p 
+                    a(href='/events/#{blob._id}/edit') Edit
+                p
+                    a(href='/events/#{blob._id}') Show
